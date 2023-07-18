@@ -94,6 +94,17 @@ function Tempurature_Display() {
                 tem_sundown.html(moment.unix(data.sys.sunset).format('H:mm') || DEFAULT_VALUE)
                 tem_Humidity.html(data.main.humidity || DEFAULT_VALUE)
                 tem_Wind_speed.html(data.wind.speed || DEFAULT_VALUE)
+
+
+                if (data.main.temp >= 40) {
+                    $('.Tem_NUMBER, .tem_number').css('color', 'rgb(248, 21, 21)')
+                } else if (data.main.temp >= 30 && data.main.temp < 40) {
+                    $('.Tem_NUMBER, .tem_number').css('color', 'rgb(248, 104, 21)')
+                } else if (20 <= data.main.temp && data.main.temp < 30) {
+                    $('.Tem_NUMBER, .tem_number').css('color', 'rgb(36, 160, 202)')
+                } else {
+                    $('.Tem_NUMBER, .tem_number').css('color', 'rgb(106, 162, 198)')
+                }
             })
             ;
 
